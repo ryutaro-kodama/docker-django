@@ -1,6 +1,8 @@
 # docker-django
 dockerを使用したDjango + MySQL + nginxの構成のwebアプリケーションのテンプレートリポジトリ
 
+**このブランチは、Djangoプロジェクトの作成が終わっているもの**
+
 ## 使用方法
 1. このリポジトリのmainブランチをclone
 2. 以下の値が定義された.envファイルをrootディレクトリに作成
