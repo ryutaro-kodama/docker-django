@@ -7,7 +7,7 @@ services:
   web:
     build: ./web
     container_name: web
-    command: uwsgi --socket :8001 --harakiri=20 --module docker_django.wsgi
+    command: uwsgi --ini /code/docker_django/uwsgi.ini
     volumes:
       - ./src:/code
       - ./src/static:/static
