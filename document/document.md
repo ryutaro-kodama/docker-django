@@ -98,6 +98,7 @@ webコンテナにDjangoのコンテナを、dbコンテナにmysqlのコンテ�
 MYSQL_DATABASE_NAME=<任意のDB名>
 MYSQL_USER_NAME=<任意のMYSQLユーザー名>
 MYSQL_USER_PASSWORD=<任意のMYSQLパスワード>
+MYSQL_ROOT_PASSWORD=<任意のROOTユーザーMYSQLパスワード>
 ```
 
 ### Dockerfileの作成
