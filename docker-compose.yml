@@ -1,0 +1,47 @@
+version: "3"
+
+volumes:
+  mysql:
+
+services:
+  web:
+    build: ./web
+    container_name: web
+    command: uwsgi --socket :8001 --module docker_django.wsgi
+    volumes:
+      - ./src:/code
+      - ./src/static:/static
+    expose:
+      - "8001"
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+  db:
+    container_name: mysql_db
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE_NAME}
+      MYSQL_USER: ${MYSQL_USER_NAME}
+      MYSQL_PASSWORD: ${MYSQL_USER_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      TZ: "Asia/Tokyo"
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+      - ./src/static:/static
+    depends_on:
+      - web
