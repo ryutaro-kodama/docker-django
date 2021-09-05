@@ -8,7 +8,6 @@ dockerを使用したDjango + MySQL + nginxの構成のwebアプリケーショ�
     - MYSQL_USER_NAME
     - MYSQL_USER_PASSWORD
     - MYSQL_ROOT_PASSWORD
-    - DJANGO_SECRET_KEY
 3. rootディレクトリで`docker-compose run web django-admin startproject <任意のプロジェクト名> .`を実行し、Djangoのプロジェクトを作成
 4. 以下の記述に従って、settings.pyを変更
     - [DjangoのDB設定の変更](https://github.com/ryutaro-kodama/docker-django/blob/main/document/document.md#django%E3%81%AEdb%E8%A8%AD%E5%AE%9A%E3%81%AE%E5%A4%89%E6%9B%B4)
