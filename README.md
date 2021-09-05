@@ -20,4 +20,4 @@ dockerを使用したDjango + MySQL + nginxの構成のwebアプリケーショ�
 
 ## その他
 - 詳細は[documant](https://github.com/ryutaro-kodama/docker-django/blob/main/document/document.md)を参照
-- docker_djangoブランチにDjangoプロジェクト作成済みのソースコードあり
+- [docker_djangoブランチ](https://github.com/ryutaro-kodama/docker-django/tree/docker_django)にDjangoプロジェクト作成済みのソースコードあり
