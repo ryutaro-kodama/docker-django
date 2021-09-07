@@ -53,7 +53,7 @@ $ scp <送りたいファイルのパス> -i <SSH秘密鍵のパス> ec2-user@<E
 ```
 例えば、ローカルのカレントディレクトリ内にある.envファイルを、`~/.ssh/sample.pem`にある秘密鍵を使って、`ec2-xxx-xxx-xxx.us-east-2.compute.amazonaws.com`のパブリックDNSを持つインスタンスの、`/home/ec2-user/tmp`ディレクトリへ送りたい場合、
 ```
-$ scp .\.env -i ~/.ssh/sample.pem ec2-user@ec2-3-16-214-20.us-east-2.compute.amazonaws.com:/home/ec2-user/tmp
+$ scp .\.env -i ~/.ssh/sample.pem ec2-xxx-xxx-xxx.us-east-2.compute.amazonaws.com:/home/ec2-user/tmp
 ```
 となる。最終的にはこの.envファイルをdocker-compose.ymlと同じディレクトリに移動させる。
 
